@@ -76,9 +76,15 @@ export function Converter() {
     if (initialHex) setColor(initialHex)
   }, [initialHex, setColor])
 
+  // Драг в color picker меняет цвет десятки раз в секунду. Браузер разрешает
+  // replaceState не чаще 100 раз за 10 с и иначе бросает SecurityError,
+  // поэтому адрес обновляем один раз, когда значение устоялось.
   useEffect(() => {
-    setSearchParams({ hex: color.slice(1) }, { replace: true })
-  }, [color, setSearchParams])
+    const hex = color.slice(1)
+    if (searchParams.get('hex') === hex) return
+    const timer = setTimeout(() => setSearchParams({ hex }, { replace: true }), 400)
+    return () => clearTimeout(timer)
+  }, [color, searchParams, setSearchParams])
 
   const copy = async (text: string) => {
     const copied = await copyText(text)
