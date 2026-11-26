@@ -1,0 +1,69 @@
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.preview {
+  display: grid;
+  gap: 0.3rem;
+  align-content: center;
+  min-height: 190px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.previewHex {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.previewLight {
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.previewDark {
+  color: #0f172a;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.scaleGroup {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.scaleRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 3px;
+}
+
+.scaleSwatch {
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.scaleSwatch:hover {
+  transform: scaleY(1.07);
+}

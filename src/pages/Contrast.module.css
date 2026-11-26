@@ -1,0 +1,82 @@
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ratio {
+  margin: 0.2rem 0 0.9rem;
+  font-size: clamp(2.4rem, 1.6rem + 3.6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.badges {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badges :global(.badge) {
+  width: 100%;
+  justify-content: flex-start;
+  white-space: normal;
+}
+
+.controls {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 620px) {
+  .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.colorCard {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.colorTitle {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.preview {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.preview p {
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.iconText {
+  font-size: 0.88rem;
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ColorLab — песочница цветов: конвертер HEX, RGB, HSL, генератор гармоничных палитр, проверка контраста по WCAG 2.1 и библиотека палитр."
+    />
+    <meta name="theme-color" content="#3b82f6" />
+    <title>ColorLab — песочница цветов</title>
+    <script>
+      // GitHub Pages не знает про history-роутинг: 404.html переписывает путь в query,
+      // здесь возвращаем его обратно до старта приложения.
+      ;(function (location) {
+        if (location.search[1] === '/') {
+          var decoded = location.search
+            .slice(1)
+            .split('&')
+            .map(function (part) {
+              return part.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash)
+        }
+      })(window.location)
+    </script>
+    <script>
+      // Тема применяется до первой отрисовки, чтобы не мигать светлой на тёмной теме.
+      try {
+        var stored = localStorage.getItem('colorlab:settings')
+        if (stored) {
+          var theme = JSON.parse(stored).data.theme
+          if (theme === 'dark' || theme === 'light') {
+            document.documentElement.dataset.theme = theme
+          }
+        }
+      } catch (error) {
+        // битые настройки — стартуем со светлой темы
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

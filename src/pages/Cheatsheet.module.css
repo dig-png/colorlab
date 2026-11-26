@@ -1,0 +1,136 @@
+.tableWrap {
+  overflow-x: auto;
+}
+
+.demo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: center;
+  margin: 1rem 0;
+}
+
+@media (max-width: 599px) {
+  .demo {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demoSwatch {
+  height: 160px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.sliders {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.slider {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+}
+
+.slider input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.readout {
+  color: var(--muted);
+  font-size: 0.84rem;
+  overflow-wrap: anywhere;
+}
+
+.inlineSwatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+
+.harmonyLayout {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .harmonyLayout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.wheelWrap {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+}
+
+.wheel {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 90deg,
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 15%),
+    0 0 0 8px var(--surface-2);
+}
+
+.wheelCaption {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.schemeGrid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.schemeCard {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.schemeCard h3 {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.schemeCard p {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.schemeColors {
+  display: flex;
+  overflow: hidden;
+  margin-top: 0.3rem;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 8px;
+}
+
+.schemeColor {
+  flex: 1;
+  height: 34px;
+}
