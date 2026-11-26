@@ -53,6 +53,14 @@ export function generateHarmony(
   const s = Number.isFinite(rawS) ? rawS : 0
   const l = Number.isFinite(rawL) ? rawL : 0.5
 
+  // У белого, чёрного и серого нет тона: схемы на hue дали бы одинаковые цвета.
+  // ponytail: для ахроматической базы отдаём шкалу светлоты; hue-подмес — если попросят
+  if (type !== 'random' && s < 0.08) {
+    return Array.from({ length: total }, (_, index) =>
+      chroma.hsl(0, 0, 0.92 - (0.8 * index) / (total - 1)).hex(),
+    )
+  }
+
   switch (type) {
     case 'complementary':
       return expand([0, 180], total, h, s, l)

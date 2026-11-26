@@ -69,6 +69,15 @@ describe('generateHarmony', () => {
     expect(new Set(hues.map((hue) => Math.round(hue / 10))).size).toBeGreaterThanOrEqual(3)
   })
 
+  it('для ахроматической базы отдаёт различимые нейтральные оттенки', () => {
+    for (const base of ['#ffffff', '#000000', '#808080']) {
+      const palette = generateHarmony(base, 'analogous', 4)
+      expect(new Set(palette).size).toBe(4)
+      const lightness = palette.map((hex) => rgbToHsl(hexToRgb(hex)).l)
+      expect(lightness).toEqual([...lightness].sort((a, b) => b - a))
+    }
+  })
+
   it('каждая схема описана в списке для интерфейса', () => {
     expect(HARMONY_TYPES.map((item) => item.id)).toEqual(TYPES)
   })
