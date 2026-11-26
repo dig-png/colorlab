@@ -1,12 +1,7 @@
 import chroma from 'chroma-js'
 
 export type HarmonyType =
-  | 'complementary'
-  | 'analogous'
-  | 'triad'
-  | 'tetrad'
-  | 'monochrome'
-  | 'random'
+  'complementary' | 'analogous' | 'triad' | 'tetrad' | 'monochrome' | 'random'
 
 export interface HarmonyMeta {
   id: HarmonyType

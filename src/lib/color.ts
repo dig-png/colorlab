@@ -19,13 +19,13 @@ export interface ColorParts {
 }
 
 const HEX_RE = /^#?(?:[0-9a-f]{3}|[0-9a-f]{6})$/i
-const RGB_RE = /^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\)$/i
+const RGB_RE =
+  /^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\)$/i
 const RGB_BARE_RE = /^(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})$/
 const HSL_RE =
   /^hsla?\(\s*(\d+(?:\.\d+)?)(?:deg)?\s*,\s*(\d+(?:\.\d+)?)%\s*,\s*(\d+(?:\.\d+)?)%\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\)$/i
 
-const clamp = (value: number, min: number, max: number) =>
-  Math.min(max, Math.max(min, value))
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
 
 /**
  * Приводит HEX к виду `#rrggbb`. Поддерживает `#RGB` и `#RRGGBB`,
@@ -132,9 +132,7 @@ export function shadeScale(hex: string, steps = 10): string[] {
 
 /** Чёрный или белый — тот, что читается на данном фоне лучше. */
 export function readableOn(hex: string): '#000000' | '#ffffff' {
-  return chroma.contrast(hex, '#000000') >= chroma.contrast(hex, '#ffffff')
-    ? '#000000'
-    : '#ffffff'
+  return chroma.contrast(hex, '#000000') >= chroma.contrast(hex, '#ffffff') ? '#000000' : '#ffffff'
 }
 
 /** Меняет светлоту HSL, сохраняя тон и насыщенность (0..1). */

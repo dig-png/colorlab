@@ -109,7 +109,9 @@ export function Converter() {
             <span className={styles.previewHex} style={{ color: readableOn(color) }}>
               {color.toUpperCase()}
             </span>
-            <span className={styles.previewLight}>Светлый текст · {lightContrast.toFixed(2)}:1</span>
+            <span className={styles.previewLight}>
+              Светлый текст · {lightContrast.toFixed(2)}:1
+            </span>
             <span className={styles.previewDark}>Тёмный текст · {darkContrast.toFixed(2)}:1</span>
           </div>
           <h3 className="section-title" style={{ marginTop: '1rem' }}>

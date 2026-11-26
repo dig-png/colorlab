@@ -32,12 +32,7 @@ export function ColorField({ label, value, hint, invalid, onChange, onBlur, onCo
           aria-describedby={describedBy}
         />
         {onCopy ? (
-          <button
-            type="button"
-            className="btn"
-            onClick={onCopy}
-            aria-label={`Копировать ${label}`}
-          >
+          <button type="button" className="btn" onClick={onCopy} aria-label={`Копировать ${label}`}>
             Копировать
           </button>
         ) : null}

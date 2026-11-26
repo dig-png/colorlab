@@ -39,14 +39,14 @@ npm run preview # предпросмотр собранной версии
 
 ## Команды
 
-| Команда | Назначение |
-| --- | --- |
-| `npm run dev` | Дев-сервер Vite |
-| `npm run build` | Проверка типов и production-сборка |
-| `npm run preview` | Локальный предпросмотр `dist/` |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier |
-| `npm test` | Однократный прогон Vitest |
+| Команда            | Назначение                                   |
+| ------------------ | -------------------------------------------- |
+| `npm run dev`      | Дев-сервер Vite                              |
+| `npm run build`    | Проверка типов и production-сборка           |
+| `npm run preview`  | Локальный предпросмотр `dist/`               |
+| `npm run lint`     | ESLint                                       |
+| `npm run format`   | Prettier                                     |
+| `npm test`         | Однократный прогон Vitest                    |
 | `npm run coverage` | Тесты с покрытием (порог 80 % для `src/lib`) |
 
 ## Архитектура

@@ -17,7 +17,14 @@ export function toHexList(palette: string[]): string {
 
 /** Разбирает пользовательский ввод «тег1, тег2» в массив без пустых и повторов. */
 export function parseTags(input: string): string[] {
-  return [...new Set(input.split(',').map((tag) => tag.trim()).filter(Boolean))]
+  return [
+    ...new Set(
+      input
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean),
+    ),
+  ]
 }
 
 export function toCollectionJson(palettes: SavedPalette[]): string {

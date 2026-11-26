@@ -358,7 +358,9 @@ export function Library() {
         onClose={() => setConfirmId(null)}
       >
         <p className="muted">
-          {confirmPalette ? `«${confirmPalette.name}» будет удалена без возможности восстановления.` : ''}
+          {confirmPalette
+            ? `«${confirmPalette.name}» будет удалена без возможности восстановления.`
+            : ''}
         </p>
       </ConfirmDialog>
     </div>

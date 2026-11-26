@@ -33,7 +33,9 @@ export function Contrast() {
 
   const adjust = (slot: Slot, target: number) => {
     const result =
-      slot === 'fg' ? nearestAccessible(color, background, target) : nearestAccessible(background, color, target)
+      slot === 'fg'
+        ? nearestAccessible(color, background, target)
+        : nearestAccessible(background, color, target)
     applyColor(slot, result.color)
     show(
       result.achieved
@@ -52,7 +54,8 @@ export function Contrast() {
   const renderField = (slot: Slot, label: string, value: string) => {
     const isEditing = editing?.slot === slot
     const text = isEditing ? editing.text : value
-    const invalid = isEditing && editing.text.trim() !== '' && parseColorInput(editing.text) === null
+    const invalid =
+      isEditing && editing.text.trim() !== '' && parseColorInput(editing.text) === null
     return (
       <ColorField
         label={label}
@@ -74,8 +77,8 @@ export function Contrast() {
       <header className="page-head">
         <h1>Контраст по WCAG 2.1</h1>
         <p className="lead">
-          Коэффициент контраста пары «текст — фон» от 1:1 до 21:1 и проверка уровней доступности AA и
-          AAA для обычного и крупного текста.
+          Коэффициент контраста пары «текст — фон» от 1:1 до 21:1 и проверка уровней доступности AA
+          и AAA для обычного и крупного текста.
         </p>
       </header>
 

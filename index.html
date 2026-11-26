@@ -22,7 +22,11 @@
               return part.replace(/~and~/g, '&')
             })
             .join('?')
-          window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash)
+          window.history.replaceState(
+            null,
+            '',
+            location.pathname.slice(0, -1) + decoded + location.hash,
+          )
         }
       })(window.location)
     </script>

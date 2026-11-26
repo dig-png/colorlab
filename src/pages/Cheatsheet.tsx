@@ -151,8 +151,9 @@ export function Cheatsheet() {
             </div>
           </div>
           <p className={styles.readout}>
-            <code>{demo}</code> · <code>{`rgb(${parts.rgb.r}, ${parts.rgb.g}, ${parts.rgb.b})`}</code>{' '}
-            · <code>{`hsl(${parts.hsl.h}, ${parts.hsl.s}%, ${parts.hsl.l}%)`}</code>
+            <code>{demo}</code> ·{' '}
+            <code>{`rgb(${parts.rgb.r}, ${parts.rgb.g}, ${parts.rgb.b})`}</code> ·{' '}
+            <code>{`hsl(${parts.hsl.h}, ${parts.hsl.s}%, ${parts.hsl.l}%)`}</code>
           </p>
         </>
       ),
@@ -160,7 +161,8 @@ export function Cheatsheet() {
     {
       id: 'harmonies',
       title: 'Схемы гармонии',
-      keywords: 'гармония комплементарная аналоговая триада тетрада монохромная цветовой круг схемы',
+      keywords:
+        'гармония комплементарная аналоговая триада тетрада монохромная цветовой круг схемы',
       content: (
         <>
           <p>
@@ -240,8 +242,8 @@ export function Cheatsheet() {
             <strong>{contrastRatio(demo, '#000000').toFixed(2)}:1</strong>.
           </p>
           <p className="muted">
-            Крупным считается текст от 18pt (24px) обычного начертания или от 14pt (18.66px) жирного.
-            Для интерфейсных элементов и границ достаточно 3:1.
+            Крупным считается текст от 18pt (24px) обычного начертания или от 14pt (18.66px)
+            жирного. Для интерфейсных элементов и границ достаточно 3:1.
           </p>
         </>
       ),

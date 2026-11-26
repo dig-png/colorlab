@@ -19,7 +19,9 @@ const palette: SavedPalette = {
 
 describe('экспорт', () => {
   it('CSS-переменные', () => {
-    expect(toCss(['#000000', '#ffffff'])).toBe(':root {\n  --color-1: #000000;\n  --color-2: #ffffff;\n}')
+    expect(toCss(['#000000', '#ffffff'])).toBe(
+      ':root {\n  --color-1: #000000;\n  --color-2: #ffffff;\n}',
+    )
     expect(toCss(['#000000'], 'brand')).toContain('--brand-1: #000000;')
   })
 
@@ -41,16 +43,19 @@ describe('экспорт', () => {
 
 describe('parseCollectionJson', () => {
   it('принимает массив и объект с palettes', () => {
-    expect(parseCollectionJson(JSON.stringify([{ name: 'A', colors: palette.colors }]))).toHaveLength(1)
+    expect(
+      parseCollectionJson(JSON.stringify([{ name: 'A', colors: palette.colors }])),
+    ).toHaveLength(1)
     expect(
       parseCollectionJson(JSON.stringify({ palettes: [{ name: 'A', colors: palette.colors }] })),
     ).toHaveLength(1)
   })
 
   it('нормализует цвета, теги и подставляет значения по умолчанию', () => {
-    const [item] = parseCollectionJson(
-      JSON.stringify([{ colors: ['#ABC', '000000', 'FFFFFF'], tags: [' ui ', 'ui', ''] }]),
-    ) ?? []
+    const [item] =
+      parseCollectionJson(
+        JSON.stringify([{ colors: ['#ABC', '000000', 'FFFFFF'], tags: [' ui ', 'ui', ''] }]),
+      ) ?? []
     expect(item.name).toBe('Импортированная палитра')
     expect(item.colors).toEqual(['#aabbcc', '#000000', '#ffffff'])
     expect(item.tags).toEqual(['ui'])

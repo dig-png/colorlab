@@ -37,7 +37,15 @@ interface SwatchProps {
   onMove: (direction: -1 | 1) => void
 }
 
-function SortableSwatch({ index, total, color, locked, onToggleLock, onEdit, onMove }: SwatchProps) {
+function SortableSwatch({
+  index,
+  total,
+  color,
+  locked,
+  onToggleLock,
+  onEdit,
+  onMove,
+}: SwatchProps) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: `slot-${index}`,
   })
@@ -81,7 +89,8 @@ function SortableSwatch({ index, total, color, locked, onToggleLock, onEdit, onM
           aria-pressed={locked}
           aria-label={locked ? `Разблокировать ${color}` : `Закрепить ${color}`}
         >
-          <span aria-hidden="true">{locked ? '🔒' : '🔓'}</span> {locked ? 'Закреплён' : 'Закрепить'}
+          <span aria-hidden="true">{locked ? '🔒' : '🔓'}</span>{' '}
+          {locked ? 'Закреплён' : 'Закрепить'}
         </button>
         <button
           type="button"
@@ -228,7 +237,11 @@ export function Palette() {
             <span className="label">Базовый цвет</span>
             <span className={styles.baseSwatch} style={{ background: color }} aria-hidden="true" />
             <code>{color}</code>
-            <button type="button" className="btn btn-small" onClick={() => setColor(palette[0] ?? color)}>
+            <button
+              type="button"
+              className="btn btn-small"
+              onClick={() => setColor(palette[0] ?? color)}
+            >
               Взять первый
             </button>
           </div>

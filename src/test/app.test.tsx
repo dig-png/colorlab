@@ -24,7 +24,9 @@ describe('приложение стартует на всех маршрутах
 
   it('контраст', () => {
     renderAt('/contrast')
-    expect(screen.getByRole('heading', { level: 1, name: 'Контраст по WCAG 2.1' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Контраст по WCAG 2.1' }),
+    ).toBeInTheDocument()
   })
 
   it('библиотека', () => {
