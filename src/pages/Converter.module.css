@@ -28,14 +28,14 @@
 
 .previewLight {
   color: #ffffff;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .previewDark {
   color: #0f172a;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .fields {
