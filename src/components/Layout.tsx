@@ -67,10 +67,6 @@ export function Layout() {
         <Outlet />
       </main>
 
-      <footer className={styles.footer}>
-        ColorLab — учебный проект. Данные хранятся только в вашем браузере.
-      </footer>
-
       <Toast />
     </div>
   )
